@@ -1,0 +1,100 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.psh {
+  position: absolute;
+  left: 42%;
+  color: brown;
+  top: 50%;
+}
+
+.wd-100 {
+  width: 100%;
+  float: left;
+}
+
+.wd-3 {
+  width: 12%;
+  float: right;
+}
+
+.svgR {
+  margin-top: 3%;
+  margin-right: 20%;
+}
+
+.fl-r {
+  float: right;
+}
+
+.mg {
+  margin-right: 5%;
+  margin-top: 0.8%;
+}
+
+.mg-r {
+  margin-right: 1%;
+}
+
+.rl {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.crp {
+  cursor: pointer;
+}
+
+.rls {
+  width: 20%;
+  float: right;
+}
+
+/* --------------------------HEADER-------------------------------------------- */
+
+.headerShadow {
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 3px 3px 10px #ccc;
+}
+
+.imgs {
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+
+.pd {
+  padding: 1%;
+}
+
+/* -----------------------TEXT-EDITOR------------------------------------------------------- */
+
+.txt {
+  padding: 5%;
+  width: 100%;
+  float: left;
+  /* background: rgba(167, 167, 167, 0.16); */
+  /* min-height: 500px; */
+}
+
+.txtb {
+  background: #fff;
+  padding: 1%;
+  border-radius: 8px;
+  min-height: 400px;
+  box-shadow: -1px 4px 10px #ccc;
+}
