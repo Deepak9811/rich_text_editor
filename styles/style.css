@@ -67,6 +67,19 @@ a {
 
 /* --------------------------HEADER-------------------------------------------- */
 
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
 .headerShadow {
   border-radius: 0px 0px 10px 10px;
   box-shadow: 3px 3px 10px #ccc;
@@ -81,20 +94,155 @@ a {
   padding: 1%;
 }
 
+.svgicon {
+  text-align: center;
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 20%;
+  /* margin-top: -17px; */
+  /* font-size: 1.5rem; */
+  opacity: 0.2;
+  transition: color 300ms;
+}
+
 /* -----------------------TEXT-EDITOR------------------------------------------------------- */
 
 .txt {
   padding: 5%;
   width: 100%;
   float: left;
-  /* background: rgba(167, 167, 167, 0.16); */
-  /* min-height: 500px; */
+  background: rgba(167, 167, 167, 0.1);
+  min-height: 100vh;
+  /* padding-left: 25%;
+  padding-top: 5%;
+  padding-right: 2%;
+  padding-bottom: 5%; */
+  padding: 2.3% 3% 5% 23%;
 }
 
 .txtb {
   background: #fff;
-  padding: 1%;
   border-radius: 8px;
-  min-height: 400px;
+  /* min-height: 400px; */
   box-shadow: -1px 4px 10px #ccc;
+}
+
+.textEditor {
+  min-height: 400px;
+  border: 1px solid #dfdfdf;
+  margin-bottom: 3%;
+  border-radius: 5px;
+}
+
+.mrt-2 {
+  margin-top: 1%;
+}
+
+.preImage {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.rdw-editor-main {
+  min-height: 400px;
+}
+
+/* -------------LOGIN---------------------------- */
+/* .modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: 0;
+  padding:3%
+} */
+
+.type_error{
+  color:rgb(240, 10, 10);
+  margin-top: 5%;
+
+  
+}
+
+.bckLog {
+  background-image: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 100%
+  ) !important;
+  width: 100%;
+  float: left;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+
+.nmc {
+  background-color: #fd7e14;
+  color: white;
+  line-height: 40px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 1%;
+  margin-bottom: 4%;
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: -4px 3px 4px -3px #777;
+  /* min-height: calc(100vh - 212px); */
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  /* position: relative; */
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  color: #6c757d;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/*----------------------event---------------------------------------------------  */
+.pdl-0{
+  padding-left: 0px !important;
+  width: 20% !important;
+}
+
+
+
+/* ------------------LOADING----------------------------------- */
+.loading_c{
+  justify-content: center;
+  display: flex;
 }
