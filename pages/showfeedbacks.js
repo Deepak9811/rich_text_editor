@@ -1,24 +1,26 @@
-import React, { Component } from "react";
+
+import React, { Component, Props } from "react";
 import { FaClipboardList } from 'react-icons/fa';
 import { FaEdit } from 'react-icons/fa';
 import { BsQuestionCircle } from "react-icons/bs";
 import { TailSpin } from 'react-loader-spinner'
 import Link from "next/link";
 import Router from "next/router";
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
-export default class Showevent extends Component {
+
+export default class showfeedbacks extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            eventData: [],
+            contentData: [],
             loading: true,
         }
     }
 
-
     componentDidMount() {
-        fetch(`http://192.168.1.217:1003/api/showevent?libid=CLBITSOM&id=0`, {
+        fetch(`http://192.168.1.217:1003/api/getquestion?libcode=CLBITSOM&questionid=0`, {
             method: "GET",
             headers: {
                 Accepts: "application/json",
@@ -29,7 +31,7 @@ export default class Showevent extends Component {
                 console.log(resp)
                 if (resp.response === "Success") {
                     this.setState({
-                        eventData: resp.data,
+                        contentData: resp.data,
                         loading: false,
                     })
 
@@ -38,20 +40,49 @@ export default class Showevent extends Component {
         })
     }
 
+    static async getInitialProps({ query }) {
 
-    editEvent(item) {
-        // console.log(item.contentId)
-        let dk = item.id
-        // id = this.props
-        // console.log(this.state.id)
-        // this.props.id
-        // console.log(this.props.match.params.id)
-        Router.push(`/event?id=${dk}`,)
+        return { path: query.id }
     }
+
+
+    editFeedback(item) {
+        let questionID = item.questionID
+        Router.push(`/feedback?id=${questionID}`,)
+    }
+
+
+    showResponse(item){
+        console.log(item.questionID)
+        let questionID = item.questionID
+
+        fetch(`http://192.168.1.217:1003/api/getAppresponse?questionID=${questionID}&userid=`, {
+            method: "GET",
+            headers: {
+              Accept: "application/json",
+              "content-type": "application/json",
+            },
+          }).then((data) => {
+            data.json().then((resp) => {
+                console.log(resp)
+            //   if (resp.response == "ok") {
+            //     // console.log("coupon updated".resp.response);
+            //   } else {
+            //     // alert("Something went wrong");
+            //   }
+            });
+          });
+
+
+        }
 
     render() {
         return (
             <div className='txt' id='pddd'>
+
+                <ProgressBar animated variant="success" now={60} label={`dk 60%`} />
+
+
                 <div className="app-main__inner">
                     <div className="app-page-title">
                         <div className="page-title-wrapper">
@@ -60,19 +91,19 @@ export default class Showevent extends Component {
                                     <FaClipboardList></FaClipboardList>
                                 </div>
                                 <div>
-                                    EVENET LIST
+                                    Feedback LIST
                                     <div className="page-title-subheading">
-                                        Click on New Event to add new event to the system.
+                                        Click on New Feedback to add new Feedback to the system.
                                     </div>
                                 </div>
                             </div>
                             <div className="page-title-actions">
-                                <Link href="/event">
+                                <Link href="/feedback">
                                     <a >
 
                                         <button type="button" className="mr-1 btn btn-success" >
                                             <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}
-                                            New Event
+                                            New Feedback
                                         </button>
                                     </a>
                                 </Link>
@@ -85,47 +116,55 @@ export default class Showevent extends Component {
 
                             <div className="main-card mb-0 card">
                                 <div className="card-header bg-info text-white">
-                                    List of evnets
+                                    List of content
                                 </div>
+
+
                                 <div className="card-body">
                                     <table className="mb-0 table table-hover">
                                         <thead>
                                             <tr>
-                                                <th style={{ width: '200px' }}>Event</th>
                                                 <th>Type</th>
-                                                <th>Valid From</th>
-                                                <th>Valid Upto</th>
-                                                <th>Organiser</th>
-                                                <th>Action</th>
+                                                <th>Question</th>
+                                                <th>valid From</th>
+                                                <th>valid Upto</th>
+                                                <th>active</th>
+                                                <th>Check</th>
+                                                <th>Edit</th>
                                             </tr>
                                         </thead>
-
                                         <tbody>
-                                            {this.state.eventData.map((item, i) => {
+
+
+                                            {this.state.contentData.map((item, i) => {
+                                                console.log(item.Active)
                                                 return (
                                                     <React.Fragment key={i}>
-
-
-                                                        <tr>
-                                                            <td>{item.eventName}</td>
+                                                        <tr >
                                                             <td>{item.type}</td>
+                                                            <td>{item.question}</td>
                                                             <td>{item.validFrom}</td>
                                                             <td>{item.validUpto}</td>
-                                                            <td >{item.location}</td>
-                                                            <td onClick={() => { this.editEvent(item) }} >
+                                                            <td>{item.active.toString()}</td>
+                                                            <td className="edt" onClick={() => { this.showResponse(item) }}>
+                                                                Show
+                                                            </td>
+                                                            <td className="edt" onClick={() => { this.editFeedback(item), this.props.item }}>
                                                                 <FaEdit></FaEdit>
                                                             </td>
                                                         </tr>
                                                     </React.Fragment>
                                                 )
-
                                             })}
+
+
+
 
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
 
+                            </div>
                         </>
                     ) : (
                         <div className="loading_c">
@@ -136,7 +175,7 @@ export default class Showevent extends Component {
 
 
                 </div>
-            </div>
-        )
+            </div >
+        );
     }
 }

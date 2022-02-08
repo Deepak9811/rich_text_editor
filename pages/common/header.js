@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { AiOutlineRocket } from "react-icons/ai";
 import { BiDirections } from "react-icons/bi";
 import { HiOutlineUserCircle } from "react-icons/hi";
-import { MdOutlinePersonAddAlt, MdKeyboardArrowDown,MdOutlineFeedback } from "react-icons/md";
+import { MdOutlinePersonAddAlt, MdKeyboardArrowDown, MdOutlineFeedback } from "react-icons/md";
 
 export default class header extends Component {
     constructor(props) {
@@ -142,7 +142,7 @@ export default class header extends Component {
     }
 
 
-    logOUt(){
+    logOUt() {
         localStorage.clear()
     }
 
@@ -268,9 +268,9 @@ export default class header extends Component {
 
                                                         <form action="/Account/Logout" method="post">
                                                             <Link href={"/"}>
-                                                                <a onClick={()=>this.logOUt()}
+                                                                <a onClick={() => this.logOUt()}
                                                                     className="dropdown-item"
-                                                                    >
+                                                                >
                                                                     <MdKeyboardArrowDown />&nbsp;Logout</a>
                                                             </Link>
 
@@ -370,10 +370,22 @@ export default class header extends Component {
                                         <li>
                                             <Link href="/feedback">
                                                 <a >
-                                                    <MdOutlineFeedback className='svgicon' />Feedback
+                                                    <MdOutlineFeedback className='svgicon' />Feedback Question
                                                 </a>
                                             </Link>
                                         </li>
+
+
+                                        <li>
+                                            <Link href="/showfeedbacks">
+                                                <a >
+                                                    <MdOutlineFeedback className='svgicon' />Show Feedback Question
+                                                </a>
+                                            </Link>
+                                        </li>
+
+
+
                                     </ul>
                                 </div>
                             </div>

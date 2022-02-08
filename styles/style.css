@@ -75,7 +75,7 @@ a {
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0;
 }
@@ -142,11 +142,51 @@ a {
 
 .preImage {
   width: 100%;
+  height: 80px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .rdw-editor-main {
   min-height: 400px;
+}
+
+.imghover:hover .imgh {
+  display: block;
+  position: fixed;
+  top: 2%;
+  width: 30%;
+  float: left;
+  left: 30%;
+  z-index: 99;
+  bottom: 2%;
+  height: 80vh;
+}
+
+.imghover:hover .imgh .imghImage {
+  max-height: 95vh;
+}
+
+.imghImage {
+  width: 100%;
+  float: left;
+  min-height: calc(100vh - 212px);
+  padding: 1%;
+  border-radius: 10px;
+  box-shadow: -1px 4px 10px #121212;
+}
+
+.imgh {
+  display: none;
+  background-color: #fff;
+  z-index: 999999;
+  position: relative;
+  border-radius: 10px;
+  min-height: calc(100vh - 212px);
+}
+
+.edt{
+  cursor: pointer;
 }
 
 /* -------------LOGIN---------------------------- */
@@ -163,11 +203,9 @@ a {
   padding:3%
 } */
 
-.type_error{
-  color:rgb(240, 10, 10);
+.type_error {
+  color: rgb(240, 10, 10);
   margin-top: 5%;
-
-  
 }
 
 .bckLog {
@@ -232,17 +270,14 @@ a {
   border-top-right-radius: 0;
 }
 
-
 /*----------------------event---------------------------------------------------  */
-.pdl-0{
+.pdl-0 {
   padding-left: 0px !important;
   width: 20% !important;
 }
 
-
-
 /* ------------------LOADING----------------------------------- */
-.loading_c{
+.loading_c {
   justify-content: center;
   display: flex;
 }

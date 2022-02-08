@@ -1,10 +1,11 @@
 
-import React, { Component } from "react";
+import React, { Component, Props } from "react";
 import { FaClipboardList } from 'react-icons/fa';
 import { FaEdit } from 'react-icons/fa';
 import { BsQuestionCircle } from "react-icons/bs";
 import { TailSpin } from 'react-loader-spinner'
 import Link from "next/link";
+import Router from "next/router";
 
 
 export default class showcontent extends Component {
@@ -18,7 +19,7 @@ export default class showcontent extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://192.168.1.217:1003/api/showcontent?libid=CLBITSOM&id=1`, {
+        fetch(`http://192.168.1.217:1003/api/showcontent?libid=CLBITSOM&id=0`, {
             method: "GET",
             headers: {
                 Accepts: "application/json",
@@ -36,6 +37,22 @@ export default class showcontent extends Component {
                 }
             })
         })
+    }
+
+    static async getInitialProps({ query }) {
+
+        return { path: query.id }
+    }
+
+
+    editContent(item) {
+        // console.log(item.contentId)
+        let contentId = item.contentId
+        // contentId = this.props
+        // console.log(this.state.contentId)
+        // this.props.contentId
+        // console.log(this.props.match.params.contentId)
+        Router.push(`/home?id=${contentId}`,)
     }
 
     render() {
@@ -95,11 +112,11 @@ export default class showcontent extends Component {
                                                 console.log(item.Active)
                                                 return (
                                                     <React.Fragment key={i}>
-                                                        <tr>
+                                                        <tr >
                                                             <td>{item.heading}</td>
                                                             <td>{item.SortOrder}</td>
                                                             <td><p>{item.Active.toString()}</p></td>
-                                                            <td >
+                                                            <td className="edt" onClick={() => { this.editContent(item), this.props.item }} id={item.contentId}>
                                                                 <FaEdit></FaEdit>
                                                             </td>
                                                         </tr>
