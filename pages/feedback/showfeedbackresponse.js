@@ -14,7 +14,8 @@ export default class showfeedbackresponse extends Component {
         this.state = {
             contentData: [],
             loading: true,
-            colorProg:""
+            colorProg: "",
+            answer: []
         }
     }
 
@@ -46,11 +47,13 @@ export default class showfeedbackresponse extends Component {
             data.json().then((resp) => {
                 // console.log("questionID :- ",resp)
                 if (resp.response === "Success") {
-                    // console.log("questionID :- ", resp.data);
+                    console.log("questionID :- ", resp.data);
                     this.setState({
                         contentData: resp.data,
                         loading: false,
+                        answer: resp.data[0].Answer
                     })
+                    console.log(this.state.answer)
                 } else {
                     Router.push("/feedback/showfeedbacks")
                     alert("No data found.");
@@ -63,7 +66,7 @@ export default class showfeedbackresponse extends Component {
 
 
 
-    chngColor(item){
+    chngColor(item) {
         if (item.percentage < 10) {
             // console.log("red :-", item.percentage)
             this.state.colorProg = "info"
@@ -114,11 +117,13 @@ export default class showfeedbackresponse extends Component {
                             </div>
                             <div className="page-title-actions">
                                 <Link href="/feedback/showfeedbacks">
+                                    <a>
 
                                         <button type="button" className="mr-1 btn btn-success" >
                                             <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}
                                             Show Feedbacks
                                         </button>
+                                    </a>
                                 </Link>
                             </div>
                         </div>
@@ -136,10 +141,7 @@ export default class showfeedbackresponse extends Component {
                                 <div className="card-body">
                                     {contentData.map((item, i) => {
                                         // console.log(item.Percentage)
-                                        {
-                                            this.state.anser = item.Answer
-                                            
-                                        }
+
                                         return (
                                             <React.Fragment key={i}>
                                                 <div className='resp'>
@@ -149,14 +151,14 @@ export default class showfeedbackresponse extends Component {
                                                     </div>
 
 
-                                                    {this.state.anser.map((item, i) => {
+                                                    {this.state.answer.map((item, i) => {
                                                         console.log(item.percentage)
                                                         {
                                                             this.chngColor(item)
                                                         }
                                                         return (
                                                             <div className='flx pdanswer'>
-                                                                <h5 style={{width:"25%"}}>{item.answer}</h5>
+                                                                <h5 style={{ width: "25%" }}>{item.answer}</h5>
                                                                 <div className='prgbr'>
                                                                     <ProgressBar max={100} min={0} variant={this.state.colorProg} now={Number(item.percentage) + 4} label={`${Number(item.percentage)} %`} />
                                                                 </div>
