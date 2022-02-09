@@ -212,7 +212,6 @@ export default class ArticleEditor extends Component {
                         system: false,
                         app: false,
                         profileImg: "",
-                        showimage: ""
                     })
                     Router.push('/showcontent')
                     alert(resp.message)

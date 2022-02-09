@@ -214,23 +214,24 @@ export default class Event extends Component {
       result.json().then((resp) => {
         console.log("response :- ", resp)
         if (resp.response === "Success") {
-          this.state.physical = false,
-            this.state.system = false,
-            this.state.virtual = false,
-            this.setState({
-              loading: false,
-              editorState: "",
-              eventName: "",
+          // this.state.physical = false,
+          //   this.state.system = false,
+          //   this.state.virtual = false,
+          this.setState({
+            loading: false,
+            editorState: "",
+            eventName: "",
 
-              profileImg: "",
-              validFrom: "",
-              validUpto: "",
-              location: "",
-              registrationLink: "",
-              type: "",
-              showimage: ""
-            })
-          Router.push('/event')
+            validFrom: "",
+            validUpto: "",
+            location: "",
+            registrationLink: "",
+            type: "",
+            physical: false,
+            system: false,
+            virtual: false,
+          })
+          Router.push('/showevent')
           alert(resp.message)
         } else {
           this.setState({

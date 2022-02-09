@@ -374,10 +374,11 @@ export default class feedback extends Component {
                         </div>
                         <div className="page-title-actions">
                             <Link href="/feedback/showfeedbacks">
-
+                                <a>
                                     <button type="button" className="mr-1 btn btn-success" >
                                         <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Feedbacks
                                     </button>
+                                </a>
                             </Link>
                         </div>
                     </div>

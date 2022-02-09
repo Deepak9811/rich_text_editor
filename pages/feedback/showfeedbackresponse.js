@@ -14,6 +14,7 @@ export default class showfeedbackresponse extends Component {
         this.state = {
             contentData: [],
             loading: true,
+            colorProg:""
         }
     }
 
