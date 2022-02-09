@@ -77,10 +77,13 @@ export default class showfeedbacks extends Component {
                             </div>
                             <div className="page-title-actions">
                                 <Link href="/feedback/feedback">
+                                    <a>
+
                                         <button type="button" className="mr-1 btn btn-success" >
                                             <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}
                                             New Feedback
                                         </button>
+                                    </a>
                                 </Link>
                             </div>
                         </div>
