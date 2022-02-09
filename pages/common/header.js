@@ -4,7 +4,7 @@ import { AiOutlineRocket } from "react-icons/ai";
 import { BiDirections } from "react-icons/bi";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { MdOutlinePersonAddAlt, MdKeyboardArrowDown, MdOutlineFeedback } from "react-icons/md";
-import Image  from 'next/image'
+import Image from 'next/image'
 
 export default class header extends Component {
     constructor(props) {
@@ -236,7 +236,7 @@ export default class header extends Component {
                         <div className="app-header__content">
                             <div className="app-header-left">
                                 <div className="search-wrapper">
-                                    <Image  src="/Image/CLBITSOM.png" alt='logo'  width={45}  height={45}/>
+                                    <Image src="/Image/CLBITSOM.png" alt='logo' width={45} height={45} />
                                 </div>
 
                             </div>
@@ -338,12 +338,12 @@ export default class header extends Component {
                                         <li className="app-sidebar__heading">Dashboards</li>
                                         <li>
                                             <Link href="/">
-                                            <a>
-                                                <><AiOutlineRocket className='svgicon' /></>
-                                                Dashboard
+                                                <a>
+                                                    <><AiOutlineRocket className='svgicon' /></>
+                                                    Dashboard
                                                 </a>
                                             </Link>
-                                            
+
 
                                         </li>
                                         <li className="app-sidebar__heading">Masters</li>
