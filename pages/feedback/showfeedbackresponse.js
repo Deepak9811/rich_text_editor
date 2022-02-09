@@ -61,6 +61,37 @@ export default class showfeedbackresponse extends Component {
         });
     }
 
+
+
+    chngColor(item){
+        if (item.percentage < 10) {
+            // console.log("red :-", item.percentage)
+            this.state.colorProg = "info"
+            // this.setState({
+            //     colorProg:"info"
+            // })
+
+        } else if (item.percentage < 30) {
+            // console.log("blue :- ", item.percentage)
+            this.state.colorProg = "success"
+
+        } else if (item.percentage < 50) {
+            // console.log("black :- ", item.percentage)
+            this.state.colorProg = "warning"
+
+        } else if (item.percentage < 60) {
+            // console.log("yellow :- ", item.percentage)
+            this.state.colorProg = "danger"
+
+        } else if (item.percentage < 70) {
+            // console.log("pink :- ", item.percentage)
+            this.state.colorProg = "danger"
+        } else if (item.percentage <= 100) {
+            // console.log("pink :- ", item.percentage)
+            this.state.colorProg = "danger"
+        }
+    }
+
     render() {
         const { contentData, loading } = this.state
         return (
@@ -121,29 +152,7 @@ export default class showfeedbackresponse extends Component {
                                                     {this.state.anser.map((item, i) => {
                                                         console.log(item.percentage)
                                                         {
-                                                            if (item.percentage < 10) {
-                                                                // console.log("red :-", item.percentage)
-                                                                this.state.colorProg = "info"
-                
-                                                            } else if (item.percentage < 30) {
-                                                                // console.log("blue :- ", item.percentage)
-                                                                this.state.colorProg = "success"
-                
-                                                            } else if (item.percentage < 50) {
-                                                                // console.log("black :- ", item.percentage)
-                                                                this.state.colorProg = "warning"
-                
-                                                            } else if (item.percentage < 60) {
-                                                                // console.log("yellow :- ", item.percentage)
-                                                                this.state.colorProg = "danger"
-                
-                                                            } else if (item.percentage < 70) {
-                                                                // console.log("pink :- ", item.percentage)
-                                                                this.state.colorProg = "danger"
-                                                            } else if (item.percentage <= 100) {
-                                                                // console.log("pink :- ", item.percentage)
-                                                                this.state.colorProg = "danger"
-                                                            }
+                                                            this.chngColor(item)
                                                         }
                                                         return (
                                                             <div className='flx pdanswer'>

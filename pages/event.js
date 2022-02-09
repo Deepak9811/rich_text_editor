@@ -214,9 +214,6 @@ export default class Event extends Component {
       result.json().then((resp) => {
         console.log("response :- ", resp)
         if (resp.response === "Success") {
-          // this.state.physical = false,
-          //   this.state.system = false,
-          //   this.state.virtual = false,
           this.setState({
             loading: false,
             editorState: "",

@@ -88,8 +88,7 @@ export default class TextEditor extends Component {
                   ></input>
                   <span
                     className="field-validation-valid text-danger"
-                    data-valmsg-for="heading"
-                    data-valmsg-replace="true"
+                   
                   ></span>
                   <div className="valid-feedback">Looks good!</div>
                 </div>
@@ -154,7 +153,7 @@ export default class TextEditor extends Component {
 
                       <label
                         className="custom-control-label"
-                        for="exampleCustomInline6"
+                        htmlFor="exampleCustomInline6"
                       >
                         Active
                       </label>
@@ -182,7 +181,7 @@ export default class TextEditor extends Component {
                       <input name="Show" type="hidden" value="false"></input>
                       <label
                         className="custom-control-label"
-                        for="exampleCustomInline1"
+                        htmlFor="exampleCustomInline1"
                       >
                         Show
                       </label>
