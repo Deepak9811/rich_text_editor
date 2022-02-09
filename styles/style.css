@@ -185,8 +185,28 @@ a {
   min-height: calc(100vh - 212px);
 }
 
-.edt{
+.edt {
   cursor: pointer;
+}
+
+.edt:hover span{
+  position: absolute;
+  width: 10%;
+  margin-top: -2%;
+  margin-left: -1%;
+  font-size: 20px;
+  color: #fd7e14;
+  /* background-color: red; */
+}
+
+.edt:hover p{
+  position: absolute;
+  width: 10%;
+  margin-top: -2%;
+  margin-left: 1%;
+  font-size: 20px;
+  color: #fd7e14;
+  /* background-color: red; */
 }
 
 /* -------------LOGIN---------------------------- */
@@ -280,4 +300,34 @@ a {
 .loading_c {
   justify-content: center;
   display: flex;
+}
+
+/* --------------------------------FEEDBACK-RESPONSE-PRINT-------------------------------------------------------- */
+
+.resp {
+  width: 100%;
+  float: left;
+  margin-bottom: 2%;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 3%;
+}
+
+.flx {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.flx h4 {
+  padding: 4px 10px 0px 0px;
+}
+
+.prgbr {
+  width: 70%;
+  float: left;
+  padding: 1% 0% 0% 5%;
+}
+
+.pdanswer {
+  padding: 2% 0% 1% 3%;
 }

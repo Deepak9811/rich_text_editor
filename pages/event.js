@@ -26,6 +26,8 @@ import DatePicker from "react-datepicker";
 import { TailSpin } from 'react-loader-spinner'
 import Router from 'next/router';
 
+import Img from 'next/image'
+
 export default class Event extends Component {
   constructor(props) {
     super(props);
@@ -130,7 +132,7 @@ export default class Event extends Component {
       if (reader.readyState === 2) {
         this.setState({
           showimage: reader.result,
-          showimgHover:true
+          showimgHover: true
         })
         let png = reader.result
         png = png.includes('data:image/png;base64,')
@@ -266,7 +268,7 @@ export default class Event extends Component {
 
   render() {
     const { editorState, eventName, physical, system, virtual, profileImg, validFrom, validUpto, location, registrationLink, type } = this.state;
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div className='txt' id='pddd'>
 
@@ -286,12 +288,10 @@ export default class Event extends Component {
             </div>
             <div className="page-title-actions">
               <Link href="/showevent">
-                <a>
 
-                  <button type="button" className="mr-1 btn btn-success" >
-                    <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Events
-                  </button>
-                </a>
+                <button type="button" className="mr-1 btn btn-success" >
+                  <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Events
+                </button>
               </Link>
             </div>
           </div>
@@ -340,10 +340,12 @@ export default class Event extends Component {
 
               {this.state.showimgHover ? (
                 <div className="col-md-1 mb-1 imghover">
-                  <img src={this.state.showimage} alt="" className='preImage' />
+                  <Img src={this.state.showimage} alt="" className='preImage' width={500}
+                    height={500} />
 
                   <div className='imgh'>
-                    <img src={this.state.showimage} alt="" className='imghImage' />
+                    <Img src={this.state.showimage} alt="" className='ImghImage' width={500}
+                      height={500} />
                   </div>
                 </div>
               ) : null}
@@ -446,9 +448,7 @@ export default class Event extends Component {
 
 
 
-            {/* <Link href="/newTexteditor">
-                        <a ><h1>Next</h1></a>
-                    </Link> */}
+
             <div className="mrt-2">
               <label>Content Description</label>
               <span className="text-danger">*</span>

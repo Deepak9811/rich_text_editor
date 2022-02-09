@@ -68,13 +68,10 @@ export default class Showevent extends Component {
                             </div>
                             <div className="page-title-actions">
                                 <Link href="/event">
-                                    <a >
-
                                         <button type="button" className="mr-1 btn btn-success" >
                                             <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}
                                             New Event
                                         </button>
-                                    </a>
                                 </Link>
                             </div>
                         </div>

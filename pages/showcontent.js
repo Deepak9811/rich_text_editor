@@ -74,13 +74,11 @@ export default class showcontent extends Component {
                             </div>
                             <div className="page-title-actions">
                                 <Link href="/home">
-                                    <a >
 
                                         <button type="button" className="mr-1 btn btn-success" >
                                             <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}
                                             New Content
                                         </button>
-                                    </a>
                                 </Link>
                             </div>
                         </div>

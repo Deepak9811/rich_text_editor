@@ -23,7 +23,7 @@ import Link from 'next/link';
 
 import { TailSpin } from 'react-loader-spinner'
 import Router from 'next/router';
-
+import Image  from 'next/image'
 
 export default class ArticleEditor extends Component {
     constructor(props) {
@@ -270,11 +270,9 @@ export default class ArticleEditor extends Component {
                         </div>
                         <div className="page-title-actions">
                             <Link href="/showcontent">
-                                <a>
-                                    <button type="button" className="mr-1 btn btn-success" >
-                                        <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Contents
-                                    </button>
-                                </a>
+                                <button type="button" className="mr-1 btn btn-success" >
+                                    <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Contents
+                                </button>
                             </Link>
                         </div>
                     </div>
@@ -323,19 +321,18 @@ export default class ArticleEditor extends Component {
 
                             {this.state.showimgHover ? (
                                 <div className="col-md-1 mb-1 imghover">
-                                    <img src={this.state.showimage} alt="" className='preImage' />
+                                    <Image src={this.state.showimage} alt="" className='preImage' width={500}
+                                        height={500} />
 
                                     <div className='imgh'>
-                                        <img src={this.state.showimage} alt="" className='imghImage' />
+                                        <Image src={this.state.showimage} alt="" className='imghImage' width={500}
+                                            height={500} />
                                     </div>
                                 </div>
                             ) : null}
                         </div>
 
 
-                        {/* <Link href="/newTexteditor">
-                        <a ><h1>Next</h1></a>
-                    </Link> */}
                         <div className="mrt-2">
                             <label>Content Description</label>
                             <span className="text-danger">*</span>

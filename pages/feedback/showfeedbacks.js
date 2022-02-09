@@ -6,7 +6,6 @@ import { BsQuestionCircle } from "react-icons/bs";
 import { TailSpin } from 'react-loader-spinner'
 import Link from "next/link";
 import Router from "next/router";
-import ProgressBar from 'react-bootstrap/ProgressBar';
 
 
 export default class showfeedbacks extends Component {
@@ -48,40 +47,19 @@ export default class showfeedbacks extends Component {
 
     editFeedback(item) {
         let questionID = item.questionID
-        Router.push(`/feedback?id=${questionID}`,)
+        Router.push(`../feedback/feedback?id=${questionID}`,)
     }
 
 
-    showResponse(item){
+    showResponse(item) {
         console.log(item.questionID)
         let questionID = item.questionID
-
-        fetch(`http://192.168.1.217:1003/api/getAppresponse?questionID=${questionID}&userid=`, {
-            method: "GET",
-            headers: {
-              Accept: "application/json",
-              "content-type": "application/json",
-            },
-          }).then((data) => {
-            data.json().then((resp) => {
-                console.log(resp)
-            //   if (resp.response == "ok") {
-            //     // console.log("coupon updated".resp.response);
-            //   } else {
-            //     // alert("Something went wrong");
-            //   }
-            });
-          });
-
-
-        }
+        Router.push(`../feedback/showfeedbackresponse?id=${questionID}`)
+    }
 
     render() {
         return (
             <div className='txt' id='pddd'>
-
-                <ProgressBar animated variant="success" now={60} label={`dk 60%`} />
-
 
                 <div className="app-main__inner">
                     <div className="app-page-title">
@@ -98,14 +76,11 @@ export default class showfeedbacks extends Component {
                                 </div>
                             </div>
                             <div className="page-title-actions">
-                                <Link href="/feedback">
-                                    <a >
-
+                                <Link href="../feedback/feedback">
                                         <button type="button" className="mr-1 btn btn-success" >
                                             <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}
                                             New Feedback
                                         </button>
-                                    </a>
                                 </Link>
                             </div>
                         </div>
@@ -118,7 +93,6 @@ export default class showfeedbacks extends Component {
                                 <div className="card-header bg-info text-white">
                                     List of content
                                 </div>
-
 
                                 <div className="card-body">
                                     <table className="mb-0 table table-hover">
@@ -147,10 +121,14 @@ export default class showfeedbacks extends Component {
                                                             <td>{item.validUpto}</td>
                                                             <td>{item.active.toString()}</td>
                                                             <td className="edt" onClick={() => { this.showResponse(item) }}>
-                                                                Show
+                                                                <span>
+                                                                    Show
+                                                                </span>
                                                             </td>
                                                             <td className="edt" onClick={() => { this.editFeedback(item), this.props.item }}>
-                                                                <FaEdit></FaEdit>
+                                                                <p>
+                                                                    <FaEdit></FaEdit>
+                                                                </p>
                                                             </td>
                                                         </tr>
                                                     </React.Fragment>

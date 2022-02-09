@@ -332,7 +332,7 @@ export default class feedback extends Component {
                         activeMcq: false,
                         active: false
                     })
-                    Router.push('/showfeedbacks')
+                    Router.push('../feedback/showfeedbacks')
                     alert(resp.message)
                 } else {
                     alert("Something wents wrong.")
@@ -373,13 +373,11 @@ export default class feedback extends Component {
                             </div>
                         </div>
                         <div className="page-title-actions">
-                            <Link href="/showevent">
-                                <a>
+                            <Link href="../feedback/showfeedbacks">
 
                                     <button type="button" className="mr-1 btn btn-success" >
                                         <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Feedbacks
                                     </button>
-                                </a>
                             </Link>
                         </div>
                     </div>

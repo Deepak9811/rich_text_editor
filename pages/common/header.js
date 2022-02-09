@@ -4,6 +4,7 @@ import { AiOutlineRocket } from "react-icons/ai";
 import { BiDirections } from "react-icons/bi";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { MdOutlinePersonAddAlt, MdKeyboardArrowDown, MdOutlineFeedback } from "react-icons/md";
+import Image  from 'next/image'
 
 export default class header extends Component {
     constructor(props) {
@@ -235,7 +236,7 @@ export default class header extends Component {
                         <div className="app-header__content">
                             <div className="app-header-left">
                                 <div className="search-wrapper">
-                                    <img src="/Image/CLBITSOM.png" width="45" />
+                                    <Image  src="/Image/CLBITSOM.png"  width={45}  height={45}/>
                                 </div>
 
                             </div>
@@ -335,7 +336,10 @@ export default class header extends Component {
                                 <div className="app-sidebar__inner">
                                     <ul className="vertical-nav-menu">
                                         <li className="app-sidebar__heading">Dashboards</li>
-                                        <li><a href="/"><><AiOutlineRocket className='svgicon' /></>Dashboard</a></li>
+                                        <li>
+                                            <a href="/"><><AiOutlineRocket className='svgicon' /></>
+                                                Dashboard</a>
+                                        </li>
                                         <li className="app-sidebar__heading">Masters</li>
                                         <li>
                                             <Link href="/showcontent">
@@ -368,8 +372,8 @@ export default class header extends Component {
 
 
                                         <li>
-                                            <Link href="/feedback">
-                                                <a >
+                                            <Link href="../feedback/feedback">
+                                                <a>
                                                     <MdOutlineFeedback className='svgicon' />Feedback Question
                                                 </a>
                                             </Link>
@@ -377,8 +381,8 @@ export default class header extends Component {
 
 
                                         <li>
-                                            <Link href="/showfeedbacks">
-                                                <a >
+                                            <Link href="../feedback/showfeedbacks">
+                                                <a>
                                                     <MdOutlineFeedback className='svgicon' />Show Feedback Question
                                                 </a>
                                             </Link>
