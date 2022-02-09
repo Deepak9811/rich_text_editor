@@ -194,7 +194,9 @@ export default class Login extends Component {
                             <div className="modal-footer clearfix">
                                 <div className="float-left">
                                     <Link href="#" className="btn-lg btn btn-link">
-                                        Recover Password
+                                        <a>
+                                            Recover Password
+                                        </a>
                                     </Link>
                                 </div>
                                 <div className="float-right">

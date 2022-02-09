@@ -288,10 +288,11 @@ export default class Event extends Component {
             </div>
             <div className="page-title-actions">
               <Link href="/showevent">
-
-                <button type="button" className="mr-1 btn btn-success" >
-                  <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Events
-                </button>
+                <a>
+                  <button type="button" className="mr-1 btn btn-success" >
+                    <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Events
+                  </button>
+                </a>
               </Link>
             </div>
           </div>

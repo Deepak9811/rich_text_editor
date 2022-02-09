@@ -247,7 +247,7 @@ export default class header extends Component {
                                             <div className="widget-content-left  ml-3 header-user-info">
                                                 <div className="btn-group">
                                                     <Link href="#">
-                                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="p-0 btn">
+                                                        <a className="p-0 btn">
                                                             <div onClick={() => this.showDrop()}>
                                                                 <div className="widget-heading">BITSOM<MdKeyboardArrowDown style={{
                                                                     height: "5%",
@@ -337,34 +337,40 @@ export default class header extends Component {
                                     <ul className="vertical-nav-menu">
                                         <li className="app-sidebar__heading">Dashboards</li>
                                         <li>
-                                            <a href="/"><><AiOutlineRocket className='svgicon' /></>
-                                                Dashboard</a>
+                                            <Link href="/">
+                                            <a>
+                                                <><AiOutlineRocket className='svgicon' /></>
+                                                Dashboard
+                                                </a>
+                                            </Link>
+                                            
+
                                         </li>
                                         <li className="app-sidebar__heading">Masters</li>
                                         <li>
                                             <Link href="/showcontent">
-                                                <a >
+                                                <a>
                                                     <BiDirections className='svgicon' />Contents
                                                 </a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/home">
-                                                <a >
+                                                <a>
                                                     <MdOutlinePersonAddAlt className='svgicon' />New Content
                                                 </a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/showevent">
-                                                <a >
+                                                <a>
                                                     <BiDirections className='svgicon' />Events
                                                 </a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/event">
-                                                <a >
+                                                <a>
                                                     <MdOutlinePersonAddAlt className='svgicon' />New Event
                                                 </a>
                                             </Link>

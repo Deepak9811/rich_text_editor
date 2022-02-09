@@ -23,7 +23,7 @@ import Link from 'next/link';
 
 import { TailSpin } from 'react-loader-spinner'
 import Router from 'next/router';
-import Image  from 'next/image'
+import Image from 'next/image'
 
 export default class ArticleEditor extends Component {
     constructor(props) {
@@ -270,9 +270,12 @@ export default class ArticleEditor extends Component {
                         </div>
                         <div className="page-title-actions">
                             <Link href="/showcontent">
-                                <button type="button" className="mr-1 btn btn-success" >
-                                    <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Contents
-                                </button>
+                                <a>
+
+                                    <button type="button" className="mr-1 btn btn-success" >
+                                        <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}Show Contents
+                                    </button>
+                                </a>
                             </Link>
                         </div>
                     </div>
