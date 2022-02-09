@@ -340,11 +340,11 @@ export default class Event extends Component {
 
               {this.state.showimgHover ? (
                 <div className="col-md-1 mb-1 imghover">
-                  <Img src={this.state.showimage} alt="" className='preImage' width={500}
+                  <Img src={this.state.showimage} alt="profile" className='preImage' width={500}
                     height={500} />
 
                   <div className='imgh'>
-                    <Img src={this.state.showimage} alt="" className='ImghImage' width={500}
+                    <Img src={this.state.showimage} alt="profile" className='ImghImage' width={500}
                       height={500} />
                   </div>
                 </div>

@@ -321,11 +321,11 @@ export default class ArticleEditor extends Component {
 
                             {this.state.showimgHover ? (
                                 <div className="col-md-1 mb-1 imghover">
-                                    <Image src={this.state.showimage} alt="" className='preImage' width={500}
+                                    <Image src={this.state.showimage} alt="profile" className='preImage' width={500}
                                         height={500} />
 
                                     <div className='imgh'>
-                                        <Image src={this.state.showimage} alt="" className='imghImage' width={500}
+                                        <Image src={this.state.showimage} alt="profile" className='imghImage' width={500}
                                             height={500} />
                                     </div>
                                 </div>

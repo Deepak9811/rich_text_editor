@@ -236,7 +236,7 @@ export default class header extends Component {
                         <div className="app-header__content">
                             <div className="app-header-left">
                                 <div className="search-wrapper">
-                                    <Image  src="/Image/CLBITSOM.png"  width={45}  height={45}/>
+                                    <Image  src="/Image/CLBITSOM.png" alt='logo'  width={45}  height={45}/>
                                 </div>
 
                             </div>
