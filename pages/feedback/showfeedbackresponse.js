@@ -51,7 +51,7 @@ export default class showfeedbackresponse extends Component {
                         loading: false,
                     })
                 } else {
-                    Router.push("../feedback/showfeedbacks")
+                    Router.push("/feedback/showfeedbacks")
                     alert("No data found.");
                 }
             });
@@ -81,7 +81,7 @@ export default class showfeedbackresponse extends Component {
                                 </div>
                             </div>
                             <div className="page-title-actions">
-                                <Link href="../feedback/showfeedbacks">
+                                <Link href="/feedback/showfeedbacks">
 
                                         <button type="button" className="mr-1 btn btn-success" >
                                             <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}

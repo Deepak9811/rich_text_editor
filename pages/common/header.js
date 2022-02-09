@@ -378,7 +378,7 @@ export default class header extends Component {
 
 
                                         <li>
-                                            <Link href="../feedback/feedback">
+                                            <Link href="/feedback/feedback">
                                                 <a>
                                                     <MdOutlineFeedback className='svgicon' />Feedback Question
                                                 </a>
@@ -387,7 +387,7 @@ export default class header extends Component {
 
 
                                         <li>
-                                            <Link href="../feedback/showfeedbacks">
+                                            <Link href="/feedback/showfeedbacks">
                                                 <a>
                                                     <MdOutlineFeedback className='svgicon' />Show Feedback Question
                                                 </a>

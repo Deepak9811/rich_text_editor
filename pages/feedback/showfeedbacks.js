@@ -47,14 +47,14 @@ export default class showfeedbacks extends Component {
 
     editFeedback(item) {
         let questionID = item.questionID
-        Router.push(`../feedback/feedback?id=${questionID}`,)
+        Router.push(`/feedback/feedback?id=${questionID}`,)
     }
 
 
     showResponse(item) {
         console.log(item.questionID)
         let questionID = item.questionID
-        Router.push(`../feedback/showfeedbackresponse?id=${questionID}`)
+        Router.push(`/feedback/showfeedbackresponse?id=${questionID}`)
     }
 
     render() {
@@ -76,7 +76,7 @@ export default class showfeedbacks extends Component {
                                 </div>
                             </div>
                             <div className="page-title-actions">
-                                <Link href="../feedback/feedback">
+                                <Link href="/feedback/feedback">
                                         <button type="button" className="mr-1 btn btn-success" >
                                             <BsQuestionCircle className="fa pe-7s-help1" style={{ marginBottom: "3%" }} /> {" "}
                                             New Feedback
