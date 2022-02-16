@@ -453,7 +453,7 @@ export default class feedback extends Component {
                                                 >
                                                     <option value="" hidden>Type of Question</option>
                                                     <option value="GEN">GENERAL</option>
-                                                    <option value="MCQ">MULTIPLE CHOICE QUESTIONS</option>
+                                                    <option value="MCQ" style={{padding:"5%"}}>MULTIPLE CHOICE QUESTIONS</option>
                                                     <option value="Rate">RATING</option>
                                                 </select>
                                             </div>

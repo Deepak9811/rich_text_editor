@@ -53,7 +53,8 @@ export default class Event extends Component {
             showBackBtn: false,
             registrationLink: "",
             location: "",
-            type: ""
+            type: "",
+            showimage: "/Image/noimage.png"
         };
     }
 
@@ -92,7 +93,7 @@ export default class Event extends Component {
         }).then((result) => {
             result.json().then((resp) => {
                 console.log("Data=", resp.data);
-                // console.log("ValidFrom=", validfrom);
+                console.log("ValidFrom=", resp.data[0].contentImage);
                 if (resp.response === "Success") {
                     this.setState({
                         showBackBtn: true,
@@ -100,11 +101,11 @@ export default class Event extends Component {
                         showValidUptoDate: true,
                         contentData: resp.data,
                         eventName: resp.data[0].eventName,
-                        showimage: "data:image/png;base64," + resp.data[0].contentImage,
+                        
                         location: resp.data[0].location,
                         type: resp.data[0].type,
                         registrationLink: resp.data[0].registrationLink,
-
+                        // showimage: "data:image/png;base64," + resp.data[0].contentImage,
                         showimgHover: true,
                         physical: resp.data[0].physicalMode,
                         system: resp.data[0].active,
@@ -115,19 +116,29 @@ export default class Event extends Component {
                         id: resp.data[0].id,
                     });
 
+                    if(resp.data[0].contentImage === null){
+                        this.setState({
+                            showimage: "/Image/noimage.png"
+                        })
+                    }else{
+                        this.setState({
+                            showimage: "data:image/png;base64," + resp.data[0].contentImage,
+                        })
+                    }
+
                     const html = resp.data[0].description;
                     const contentBlock = htmlToDraft(html);
                     if (contentBlock) {
-                        const contentState = ContentState.createFromBlockArray(
-                            contentBlock.contentBlocks
-                        );
-                        //console.log(contentState);
+                        const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
                         const editorState = EditorState.createWithContent(contentState);
                         this.setState({
-                            editorState: EditorState.createWithContent(
-                                ContentState.createFromBlockArray(convertFromHTML(html))
-                            ),
+                            editorState: editorState,
                         });
+                        // this.setState({
+                        //     editorState: EditorState.createWithContent(
+                        //         ContentState.createFromBlockArray(convertFromHTML(html))
+                        //     ),
+                        // });
                     }
                 }
             });

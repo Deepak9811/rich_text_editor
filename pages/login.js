@@ -184,7 +184,7 @@ export default class Login extends Component {
                                     <div className="position-relative form-check">
                                         <input
                                             className="form-check-input"
-                                            // id="RememberMe" 
+                                            id="remembereee" 
                                             // name="RememberMe" 
                                             value={"true"}
                                             type="checkbox"
@@ -197,7 +197,7 @@ export default class Login extends Component {
                                 name="RememberMe" 
                                 type="hidden" 
                                 value="false" /> */}
-                                        <label className="form-check-label">Keep me logged in</label>
+                                        <label className="form-check-label" htmlFor="remembereee">Keep me logged in</label>
                                     </div>
 
 

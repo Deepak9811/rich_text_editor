@@ -44,6 +44,7 @@ export default class ArticleEditor extends Component {
             contentId: "",
             showBackBtn: false,
             heading: "",
+            showimage: "/Image/noimage.png"
         };
     }
 
@@ -93,8 +94,8 @@ export default class ArticleEditor extends Component {
                     this.setState({
                         contentData: resp.data,
                         heading: resp.data[0].heading,
-                        showimage: "data:image/png;base64," + resp.data[0].contentimage,
-
+                        // showimage: "data:image/png;base64," + resp.data[0].contentimage,
+                        showimgHover: true,
                         order: resp.data[0].SortOrder,
                         system: resp.data[0].Active,
                         app: resp.data[0].Show,
@@ -102,9 +103,20 @@ export default class ArticleEditor extends Component {
                         showBackBtn: true,
                     })
 
-                    if (resp.data[0].contentimage != null) {
+                    // if (resp.data[0].contentimage != null) {
+                    //     this.setState({
+                    //         showimgHover: true,
+                    //     })
+                    // }
+
+
+                    if(resp.data[0].contentimage === null){
                         this.setState({
-                            showimgHover: true,
+                            showimage: "/Image/noimage.png"
+                        })
+                    }else{
+                        this.setState({
+                            showimage: "data:image/png;base64," + resp.data[0].contentimage,
                         })
                     }
 
@@ -115,11 +127,7 @@ export default class ArticleEditor extends Component {
                         const editorState = EditorState.createWithContent(contentState);
                         this.setState(
                             {
-                                editorState: EditorState.createWithContent(
-                                    ContentState.createFromBlockArray(
-                                        convertFromHTML(html)
-                                    )
-                                )
+                                editorState: editorState
                             }
                         )
                     }
@@ -352,7 +360,7 @@ export default class ArticleEditor extends Component {
 
                                 </div>
 
-                                {this.state.showimgHover ? (
+                                {/* {this.state.showimgHover ? (
                                     <div className="col-md-1 mb-1 imghover" style={{ display: this.state.hideImage ? "none" : "block" }}>
                                         <Image src={this.state.showimage} alt="profile" className='preImage' width={500}
                                             height={500} />
@@ -360,6 +368,29 @@ export default class ArticleEditor extends Component {
                                         <div className='imgh' >
                                             <Image src={this.state.showimage} alt="profile" className='imghImage' width={500}
                                                 height={500} />
+                                        </div>
+                                    </div>
+                                ) : null} */}
+
+
+                                {this.state.showimgHover ? (
+                                    <div className="col-md-1 mb-1 imghover" style={{ display: this.state.hideImage ? "none" : "block" }}>
+                                        <Image
+                                            src={this.state.showimage}
+                                            alt="profile"
+                                            className="preImage"
+                                            width={500}
+                                            height={500}
+                                        />
+
+                                        <div className="imgh">
+                                            <Image
+                                                src={this.state.showimage}
+                                                alt="profile"
+                                                className="ImghImage"
+                                                width={500}
+                                                height={500}
+                                            />
                                         </div>
                                     </div>
                                 ) : null}

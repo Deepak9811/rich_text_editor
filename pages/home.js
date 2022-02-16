@@ -49,7 +49,7 @@ export default class showcontent extends Component {
                         </div>
 
                         {/* --------------------------------------------- */}
-
+{/* 
 
 
 
@@ -107,7 +107,7 @@ export default class showcontent extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
 
 

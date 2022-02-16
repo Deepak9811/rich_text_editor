@@ -204,6 +204,20 @@ export default class showfeedbackresponse extends Component {
                                                 </React.Fragment>
                                             )
                                         })}
+
+                                        <div style={{justifyContent:"center",alignItems:"center",width:"100%"}}>
+                                            <Link href="/feedback/questions">
+                                                <a >
+                                                    <input
+                                                        type="reset"
+                                                        value="BACK"
+                                                        className="btn-wide btn btn-light"
+                                                        id="btnClear"
+                                                        style={{ marginLeft: "43%" }}
+                                                    />
+                                                </a>
+                                            </Link>
+                                        </div>
                                     </div>
 
                                 </div>
