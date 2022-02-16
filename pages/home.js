@@ -54,55 +54,55 @@ export default class showcontent extends Component {
 
 
 
-                        <div class="row">
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card mb-3 widget-content bg-success">
-                                    <div class="widget-content-wrapper text-white">
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading">Visitors</div>
-                                            <div class="widget-subheading">Visited the premises</div>
+                        <div className="row">
+                            <div className="col-md-6 col-xl-3">
+                                <div className="card mb-3 widget-content bg-success">
+                                    <div className="widget-content-wrapper text-white">
+                                        <div className="widget-content-left">
+                                            <div className="widget-heading">Visitors</div>
+                                            <div className="widget-subheading">Visited the premises</div>
                                         </div>
-                                        <div class="widget-content-right">
-                                            <div class="widget-numbers text-white"><span>0</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card mb-3 widget-content bg-info">
-                                    <div class="widget-content-wrapper text-white">
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading">Within Premises</div>
-                                            <div class="widget-subheading">Visitors within premises</div>
-                                        </div>
-                                        <div class="widget-content-right">
-                                            <div class="widget-numbers text-white"><span>0</span></div>
+                                        <div className="widget-content-right">
+                                            <div className="widget-numbers text-white"><span>0</span></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card mb-3 widget-content bg-warning">
-                                    <div class="widget-content-wrapper text-white">
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading">Employees</div>
-                                            <div class="widget-subheading">Within campus</div>
+                            <div className="col-md-6 col-xl-3">
+                                <div className="card mb-3 widget-content bg-info">
+                                    <div className="widget-content-wrapper text-white">
+                                        <div className="widget-content-left">
+                                            <div className="widget-heading">Within Premises</div>
+                                            <div className="widget-subheading">Visitors within premises</div>
                                         </div>
-                                        <div class="widget-content-right">
-                                            <div class="widget-numbers text-white"><span>41</span></div>
+                                        <div className="widget-content-right">
+                                            <div className="widget-numbers text-white"><span>0</span></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card mb-3 widget-content bg-focus">
-                                    <div class="widget-content-wrapper text-white">
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading">Support Staff</div>
-                                            <div class="widget-subheading">Within campus</div>
+                            <div className="col-md-6 col-xl-3">
+                                <div className="card mb-3 widget-content bg-warning">
+                                    <div className="widget-content-wrapper text-white">
+                                        <div className="widget-content-left">
+                                            <div className="widget-heading">Employees</div>
+                                            <div className="widget-subheading">Within campus</div>
                                         </div>
-                                        <div class="widget-content-right">
-                                            <div class="widget-numbers text-white"><span>0</span></div>
+                                        <div className="widget-content-right">
+                                            <div className="widget-numbers text-white"><span>41</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-xl-3">
+                                <div className="card mb-3 widget-content bg-focus">
+                                    <div className="widget-content-wrapper text-white">
+                                        <div className="widget-content-left">
+                                            <div className="widget-heading">Support Staff</div>
+                                            <div className="widget-subheading">Within campus</div>
+                                        </div>
+                                        <div className="widget-content-right">
+                                            <div className="widget-numbers text-white"><span>0</span></div>
                                         </div>
                                     </div>
                                 </div>
