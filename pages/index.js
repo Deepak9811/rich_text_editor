@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Login from "./login";
+import Homes from './home'
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         
       </Head>
 
-      <Login />
+      <Homes />
     </>
   )
 }

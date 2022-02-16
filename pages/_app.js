@@ -10,15 +10,15 @@ function MyApp({ Component, pageProps }) {
 
   const router = useRouter();
 
-  if (router.pathname != "/") {
+  if (router.pathname != "/login" && router.pathname !="/common/protected") {
     return (
       <>
         <Head>
           <link rel='shortcut icon' href='/image/celect-logo.png' />
         </Head>
-  
+
         <Header />
-  
+
         <Component {...pageProps} />
       </>
     )
@@ -29,8 +29,8 @@ function MyApp({ Component, pageProps }) {
         <Head>
           <link rel='shortcut icon' href='/image/celect-logo.png' />
         </Head>
-  
-  
+
+
         <Component {...pageProps} />
       </>
     )
@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
 
 
 
-  
+
 }
 
 export default MyApp

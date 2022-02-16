@@ -20,8 +20,17 @@ export default class header extends Component {
             showChngPass: false,
             newPass: "",
             newPassRetype: "",
-            clasID: false
+            clasID: false,
+            userName:"BITSoM"
         }
+    }
+
+
+    componentDidMount() {
+        let user_name = JSON.parse(localStorage.getItem("user_name"))
+        this.setState({
+            userName: user_name
+        })
     }
 
     showDrop() {
@@ -114,7 +123,7 @@ export default class header extends Component {
 
     updatePass() {
         const { newPass, newPassRetype } = this.state
-        fetch(`http://192.168.1.217:1003/api/Changepassword?email=${newPass}&password=${newPassRetype}`, {
+        fetch(`${process.env.PATH_URL}Changepassword?email=${newPass}&password=${newPassRetype}`, {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -138,7 +147,7 @@ export default class header extends Component {
                 }
             })
         }).catch(error => {
-            console.log(error.message)
+            alert(error.message)
         })
     }
 
@@ -249,7 +258,7 @@ export default class header extends Component {
                                                     <Link href="#">
                                                         <a className="p-0 btn">
                                                             <div onClick={() => this.showDrop()}>
-                                                                <div className="widget-heading">BITSOM<MdKeyboardArrowDown style={{
+                                                                <div className="widget-heading">{this.state.userName}<MdKeyboardArrowDown style={{
                                                                     height: "5%",
                                                                     width: "20px"
                                                                 }} />
@@ -268,7 +277,7 @@ export default class header extends Component {
                                                             &nbsp;Change Password</span>
 
                                                         <form action="/Account/Logout" method="post">
-                                                            <Link href={"/"}>
+                                                            <Link href={"/login"}>
                                                                 <a onClick={() => this.logOUt()}
                                                                     className="dropdown-item"
                                                                 >
@@ -348,21 +357,21 @@ export default class header extends Component {
                                         </li>
                                         <li className="app-sidebar__heading">Masters</li>
                                         <li>
-                                            <Link href="/showcontent">
+                                            <Link href="/contents">
                                                 <a>
                                                     <BiDirections className='svgicon' />Contents
                                                 </a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/home">
+                                            <Link href="/content">
                                                 <a>
                                                     <MdOutlinePersonAddAlt className='svgicon' />New Content
                                                 </a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/showevent">
+                                            <Link href="/events">
                                                 <a>
                                                     <BiDirections className='svgicon' />Events
                                                 </a>
@@ -378,18 +387,18 @@ export default class header extends Component {
 
 
                                         <li>
-                                            <Link href="/feedback/feedback">
+                                            <Link href="/feedback">
                                                 <a>
-                                                    <MdOutlineFeedback className='svgicon' />Feedback Question
+                                                    <MdOutlineFeedback className='svgicon' />New Feedback 
                                                 </a>
                                             </Link>
                                         </li>
 
 
                                         <li>
-                                            <Link href="/feedback/showfeedbacks">
+                                            <Link href="/feedback/questions">
                                                 <a>
-                                                    <MdOutlineFeedback className='svgicon' />Show Feedback Question
+                                                    <MdOutlineFeedback className='svgicon' />Show Feedback 
                                                 </a>
                                             </Link>
                                         </li>

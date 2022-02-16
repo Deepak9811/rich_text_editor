@@ -109,6 +109,10 @@ a {
 
 /* -----------------------TEXT-EDITOR------------------------------------------------------- */
 
+.DraftEditor-editorContainer{
+  z-index: 0 !important;
+}
+
 .txt {
   padding: 5%;
   width: 100%;
@@ -189,22 +193,27 @@ a {
   cursor: pointer;
 }
 
-.edt:hover span{
-  position: absolute;
+.edt:hover{
+  border-bottom: 1px solid rgb(255, 51, 0);
+}
+
+.edt:hover span {
+  /* position: absolute;
   width: 10%;
   margin-top: -2%;
   margin-left: -1%;
-  font-size: 20px;
+  font-size: 20px; */
   color: #fd7e14;
   /* background-color: red; */
 }
 
-.edt:hover p{
-  position: absolute;
-  width: 10%;
-  margin-top: -2%;
-  margin-left: 1%;
-  font-size: 20px;
+.edt:hover p {
+  /* border-bottom: 1px solid rgb(255, 51, 0); */
+  /* position: absolute; */
+  /* width: 10%; */
+  /* margin-top: -2%;
+  margin-left: 0%; */
+  /* font-size: 20px; */
   color: #fd7e14;
   /* background-color: red; */
 }
@@ -222,6 +231,15 @@ a {
   outline: 0;
   padding:3%
 } */
+
+
+.loginloader{
+  justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    margin-top: 10%;
+}
 
 .type_error {
   color: rgb(240, 10, 10);
@@ -330,4 +348,28 @@ a {
 
 .pdanswer {
   padding: 2% 0% 1% 3%;
+}
+
+.err {
+  text-align: center;
+  color: rgb(233, 13, 13);
+  padding: 10%;
+}
+
+
+/* -------------------time-selection------------------------------------- */
+
+.rc-time-picker-input{
+  border: none !important;
+
+  padding: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057;
+  height: 20px!important;
+}
+
+.rc-time-picker-clear{
+  display: none !important;
 }
