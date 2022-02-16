@@ -23,7 +23,7 @@ export default class showcontent extends Component {
 
     render() {
         return (
-            <Protected>
+            // <Protected>
                 <div className='txt' id='pddd'>
                     <div className="app-main__inner">
                         <div className="app-page-title">
@@ -160,7 +160,7 @@ export default class showcontent extends Component {
 
                     </div>
                 </div >
-            </Protected>
+            // </Protected>
         );
     }
 }
