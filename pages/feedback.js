@@ -207,45 +207,50 @@ export default class feedback extends Component {
 
     addMcq() {
         const { activeMcq, sortOrder, choice, mcqQuestionId, mcqNewData } = this.state;
-        this.setState({
-            loading: true
-        })
-        fetch(`${process.env.PATH_URL}insertmcq`, {
-            method: "POST",
-            headers: {
-                Accept: "application/json",
-                "content-type": "application/json"
-            },
-            body: JSON.stringify({
-                mcqid: "",
-                questionid: mcqQuestionId,
-                choice: choice,
-                sortorder: sortOrder,
-                active: activeMcq
+        if(choice !== "" && sortOrder !== ""){
+            this.setState({
+                loading: true
             })
-        }).then((result) => {
-            result.json().then((resp) => {
-                console.log(resp)
-                if (resp.response === "Success") {
-                    this.setState({
-                        resp: resp.data,
-                        showMcq: true,
-                        loading: false,
-                        choice: "",
-                        sortOrder: "",
-                        activeMcq: false
-                    })
-                    alert("Question Add Successfully.")
-                } else {
-                    alert("Something wents wrong.")
-                    this.setState({
-                        loading: false
-                    })
-                }
+            fetch(`${process.env.PATH_URL}insertmcq`, {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    mcqid: "",
+                    questionid: mcqQuestionId,
+                    choice: choice,
+                    sortorder: sortOrder,
+                    active: activeMcq
+                })
+            }).then((result) => {
+                result.json().then((resp) => {
+                    console.log(resp)
+                    if (resp.response === "Success") {
+                        this.setState({
+                            resp: resp.data,
+                            showMcq: true,
+                            loading: false,
+                            choice: "",
+                            sortOrder: "",
+                            activeMcq: false
+                        })
+                        alert("Question Add Successfully.")
+                    } else {
+                        alert("Something wents wrong.")
+                        this.setState({
+                            loading: false
+                        })
+                    }
+                })
+            }).catch((error) => {
+                alert(error.message)
             })
-        }).catch((error) => {
-            alert(error.message)
-        })
+        }else{
+            alert("Please fill all details...")
+        }
+        
     }
 
 

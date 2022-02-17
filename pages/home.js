@@ -49,7 +49,7 @@ export default class showcontent extends Component {
                         </div>
 
                         {/* --------------------------------------------- */}
-{/* 
+
 
 
 
@@ -59,11 +59,11 @@ export default class showcontent extends Component {
                                 <div className="card mb-3 widget-content bg-success">
                                     <div className="widget-content-wrapper text-white">
                                         <div className="widget-content-left">
-                                            <div className="widget-heading">Visitors</div>
-                                            <div className="widget-subheading">Visited the premises</div>
+                                            <div className="widget-heading">Total Content</div>
+                                            {/* <div className="widget-subheading">Visited the premises</div> */}
                                         </div>
                                         <div className="widget-content-right">
-                                            <div className="widget-numbers text-white"><span>0</span></div>
+                                            <div className="widget-numbers text-white"><span>06</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -72,11 +72,11 @@ export default class showcontent extends Component {
                                 <div className="card mb-3 widget-content bg-info">
                                     <div className="widget-content-wrapper text-white">
                                         <div className="widget-content-left">
-                                            <div className="widget-heading">Within Premises</div>
-                                            <div className="widget-subheading">Visitors within premises</div>
+                                            <div className="widget-heading">Total Event</div>
+                                            {/* <div className="widget-subheading">Visitors within premises</div> */}
                                         </div>
                                         <div className="widget-content-right">
-                                            <div className="widget-numbers text-white"><span>0</span></div>
+                                            <div className="widget-numbers text-white"><span>03</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -85,11 +85,11 @@ export default class showcontent extends Component {
                                 <div className="card mb-3 widget-content bg-warning">
                                     <div className="widget-content-wrapper text-white">
                                         <div className="widget-content-left">
-                                            <div className="widget-heading">Employees</div>
-                                            <div className="widget-subheading">Within campus</div>
+                                            <div className="widget-heading">Total Feedback Quesiton</div>
+                                            {/* <div className="widget-subheading">Within campus</div> */}
                                         </div>
                                         <div className="widget-content-right">
-                                            <div className="widget-numbers text-white"><span>41</span></div>
+                                            <div className="widget-numbers text-white"><span>05</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -98,16 +98,16 @@ export default class showcontent extends Component {
                                 <div className="card mb-3 widget-content bg-focus">
                                     <div className="widget-content-wrapper text-white">
                                         <div className="widget-content-left">
-                                            <div className="widget-heading">Support Staff</div>
-                                            <div className="widget-subheading">Within campus</div>
+                                            <div className="widget-heading">Total Response</div>
+                                            {/* <div className="widget-subheading">Within campus</div> */}
                                         </div>
                                         <div className="widget-content-right">
-                                            <div className="widget-numbers text-white"><span>0</span></div>
+                                            <div className="widget-numbers text-white"><span>3</span></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
 
 
 
