@@ -33,6 +33,7 @@ import Img from "next/image";
 
 import moment from "moment";
 import Head from "next/head";
+import Protected from "./common/protected";
 
 export default class Event extends Component {
   constructor(props) {
@@ -233,7 +234,7 @@ export default class Event extends Component {
       libconCode
     } = this.state;
 
-    fetch(`http://192.168.1.217:1003/api/saveevent`, {
+    fetch(`${process.env.PATH_URL}saveevent`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -334,6 +335,7 @@ export default class Event extends Component {
     // console.log(validFrom);
 
     return (
+      <Protected>
       <>
 
         <Head>
@@ -758,6 +760,7 @@ export default class Event extends Component {
           </div>
         </div>
       </>
+      </Protected>
     );
   }
 }

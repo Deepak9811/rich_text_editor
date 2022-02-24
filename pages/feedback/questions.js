@@ -7,7 +7,7 @@ import { TailSpin } from 'react-loader-spinner'
 import Link from "next/link";
 import Router from "next/router";
 import Head from "next/head";
-
+import Protected from "../common/protected";
 
 export default class showfeedbacks extends Component {
     constructor(props) {
@@ -78,6 +78,7 @@ export default class showfeedbacks extends Component {
 
     render() {
         return (
+            <Protected>
             <>
                 <Head>
                     <title>Feedback Questions</title>
@@ -183,6 +184,7 @@ export default class showfeedbacks extends Component {
                     </div>
                 </div >
             </>
+            </Protected>
         );
     }
 }

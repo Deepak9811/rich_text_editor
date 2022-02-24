@@ -284,7 +284,7 @@ export default class ArticleEditor extends Component {
         const { editorState, heading, order, system, app, profileImg, showimage } = this.state;
         // console.log(this.state)
         return (
-
+                <Protected>
             <>
 
                 <Head>
@@ -569,6 +569,7 @@ export default class ArticleEditor extends Component {
 
                 </div>
             </>
+            </Protected>
         )
     }
 }

@@ -7,6 +7,7 @@ import Link from "next/link";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Router from 'next/router';
 import Head from "next/head";
+import Protected from "./common/protected";
 
 export default class showfeedbackresponse extends Component {
     constructor(props) {
@@ -123,6 +124,7 @@ export default class showfeedbackresponse extends Component {
     render() {
         const { contentData, loading } = this.state
         return (
+            <Protected>
             <>
                 <Head>
                     <title>Feedback Response</title>
@@ -230,6 +232,7 @@ export default class showfeedbackresponse extends Component {
                     </div>
                 </div >
             </>
+            </Protected>
         )
     }
 }

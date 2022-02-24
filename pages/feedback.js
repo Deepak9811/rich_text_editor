@@ -234,7 +234,7 @@ export default class feedback extends Component {
                             loading: false,
                             choice: "",
                             sortOrder: "",
-                            activeMcq: false
+                            // activeMcq: false
                         })
                         alert("Question Add Successfully.")
                     } else {

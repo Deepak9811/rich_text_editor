@@ -7,7 +7,7 @@ import { TailSpin } from 'react-loader-spinner'
 import Link from "next/link";
 import Router from "next/router";
 import Head from "next/head";
-
+import Protected from "./common/protected";
 
 export default class showcontent extends Component {
     constructor(props) {
@@ -80,6 +80,7 @@ export default class showcontent extends Component {
 
     render() {
         return (
+            <Protected>
             <>
                 <Head>
                     <title>Contents</title>
@@ -174,6 +175,7 @@ export default class showcontent extends Component {
                     </div>
                 </div >
             </>
+            </Protected>
         );
     }
 }

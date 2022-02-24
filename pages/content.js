@@ -295,6 +295,7 @@ export default class ArticleEditor extends Component {
         // console.log(this.state)
         console.log("heading :- ", this.state.heading, " order :- ", this.state.order, "this.props.data.id :- ", this.props.data.id)
         return (
+            <Protected>
             <>
                 <Head>
                     <title>Content</title>
@@ -554,6 +555,7 @@ export default class ArticleEditor extends Component {
 
                 </div>
             </>
+            </Protected>
         )
     }
 }

@@ -263,6 +263,7 @@ a {
   min-height: 100vh;
   flex-direction: column;
   margin: 0;
+  justify-content: center;
 }
 
 .nmc {
@@ -276,10 +277,14 @@ a {
   max-width: 500px;
   margin: 0 auto;
   margin-top: 1%;
-  margin-bottom: 4%;
+  margin-bottom: 1%;
   border-radius: 5px;
   background: #ffffff;
-  box-shadow: -4px 3px 4px -3px #777;
+  /* box-shadow: -4px 3px 4px -3px #777; */
+  box-shadow: 0 0.76875rem 2.4875rem rgba(52, 58, 64, 0.3),
+    0 1.3375rem 1.70625rem rgba(52, 58, 64, 0.3),
+    0 0.55rem 0.53125rem rgba(0, 0, 0, 0.05),
+    0 0.225rem 0.4375rem rgba(52, 58, 64, 0.3);
   /* min-height: calc(100vh - 212px); */
 }
 
@@ -377,4 +382,58 @@ a {
 
 .rc-time-picker-clear{
   display: none !important;
+}
+
+
+
+/* -----------ADD-MORE-EDIT-FEEDBACK----------------------- */
+
+.pd-0{
+  padding-left: 0px !important;
+}
+
+
+.removeMore{
+  width: 5% !important;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* align-content: center; */
+    /* text-align: center; */
+    display: contents;
+    cursor: pointer;
+}
+
+.addmore{
+  padding-top: 1%;
+  border-top: 1px solid rgba(26, 54, 126, 0.125);
+  font-size: 20px;
+  margin-bottom: 2%;
+  
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+.addotherurl {
+  width: 65%;
+}
+
+.addotherurl svg {
+  width: 28px;
+  margin-left: 5px;
+  color: #3f6ad8;
+}
+
+.add-more-feild {
+  width: 100%;
+  /* float: left; */
+  display: flex;
+  margin: 0 auto;
+  outline: none;
+}
+
+.add-more-feild svg {
+  width: 50px;
+  margin: 0 auto;
 }
